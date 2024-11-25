@@ -1,0 +1,76 @@
+"""import random
+
+NOMBRE_MIN = 1
+NOMBRE_MAX = 10
+NOMBRE_QUESTION = 4
+NB_POINT = 0
+
+def poser_question():
+    a = random.randint(NOMBRE_MIN, NOMBRE_MAX)
+    b = random.randint(NOMBRE_MIN, NOMBRE_MAX)
+
+    while True:
+        response_str = input(f"Calculez {a} + {b} = ")
+
+        try:
+            reponse_int = int(response_str)
+
+            if reponse_int == a + b:
+                print("La réponse est correcte.")
+                break  # Sortir de la boucle si la réponse est correcte
+            else:
+                print("La réponse est incorrecte. Essayez encore.")
+        except ValueError:
+            print("Veuillez donner le résultat en chiffres.")
+
+# Appeler la fonction
+
+
+for i in range(0,NOMBRE_QUESTION):
+    print(f"question n{i+1} sur {NOMBRE_QUESTION} : ")
+    poser_question()
+    print()"""
+import random
+
+NOMBRE_MIN = 1
+NOMBRE_MAX = 10
+NOMBRE_QUESTION = 4
+NB_POINT = 0
+
+def poser_question():
+    a = random.randint(NOMBRE_MIN, NOMBRE_MAX)
+    b = random.randint(NOMBRE_MIN, NOMBRE_MAX)
+
+    while True:
+        response_str = input(f"Calculez {a} + {b} = ")
+
+        try:
+            reponse_int = int(response_str)
+
+            if reponse_int == a + b:
+                print("La réponse est correcte.")
+                global NB_POINT
+                NB_POINT+=1
+                return  True
+
+                break  # Sortir de la boucle si la réponse est correcte
+            else:
+                print("La réponse est incorrecte. Essayez encore.")
+                return False
+        except ValueError:
+            print("Veuillez donner le résultat en chiffres.")
+
+# Appeler la fonction
+
+
+for i in range(0,NOMBRE_QUESTION):
+    print(f"question n{i+1} sur {NOMBRE_QUESTION} : ")
+    poser_question()
+    print(NB_POINT)
+    print(f"votre note est {NB_POINT}/{NOMBRE_QUESTION}")
+    print()
+
+
+
+
+
